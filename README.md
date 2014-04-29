@@ -1,4 +1,4 @@
 SlideUP2Unlock
 ==============
 
-Slide up the loockscreen to unlock the device!
+Slide up the loockscreen to unlock the device! (UNFINISHED!)
