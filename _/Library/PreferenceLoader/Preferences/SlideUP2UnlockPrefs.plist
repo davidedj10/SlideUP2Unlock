@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = SlideUP2UnlockPrefs;
+	cell = PSLinkCell;
+	detail = SlideUP2UnlockPrefsListController;
+	icon = SlideUP2UnlockPrefs.png;
+	isController = 1;
+	label = SlideUP2Unlock;
+    };
+}

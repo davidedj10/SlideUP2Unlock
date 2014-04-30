@@ -14,3 +14,5 @@ include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
 	install.exec "killall -9 SpringBoard"
+SUBPROJECTS += slideup2unlockprefs
+include $(THEOS_MAKE_PATH)/aggregate.mk

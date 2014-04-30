@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Enable or Disable SlideUP2Unlock</string>
+		</dict>
+		
+		<dict>
+		<key>PostNotification</key>
+			<string>com.davidedj10.slideup2unlock/prefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.davidedj10.slideup2unlockprefs</string>
+			<key>key</key>
+			<string>enable</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>Respring:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Respring!</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Respring required.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Hide the unlock icon</string>
+		</dict>
+		<dict>
+		<key>PostNotification</key>
+			<string>com.davidedj10.slideup2unlock/prefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.davidedj10.slideup2unlockprefs</string>
+			<key>key</key>
+			<string>hide_grabber_icon</string>
+			<key>label</key>
+			<string>Hide</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Selecting this option you will hide the lock grabber on the bottom right of the lockscreen. (You will be able anyway to slide up the lockscreen from the corner).</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>PS: You can set your own icon for the unlock grabber in the lockscreen simply changing the file called "unlock@2x.png, unlock.png" in the SlideUP2Unlock Preference bundle.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Infos:</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>Follow:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>icon</key>
+			<string>twitter.png</string>
+			<key>label</key>
+			<string>Follow me on Twitter</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>Github:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>icon</key>
+			<string>github.png</string>
+			<key>label</key>
+			<string>View Source code!</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>Donate:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>icon</key>
+			<string>paypal.png</string>
+			<key>label</key>
+			<string>Donate!</string>
+		</dict>
+		<dict>
+	    	<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>SlideUP2Unlock 0.1 © 2014 @Davidedj10.</string>
+	</dict>	
+	</array>
+	<key>title</key>
+	<string>SlideUP2Unlock</string>
+</dict>
+</plist>
