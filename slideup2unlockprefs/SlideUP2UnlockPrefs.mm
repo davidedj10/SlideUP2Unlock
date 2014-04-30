@@ -11,11 +11,27 @@
 @end
 
 @implementation SlideUP2UnlockPrefsListController
+    
 - (id)specifiers {
+
+    //not sure if this is the better place for this crap...
+    UIImage *image = [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/SlideUP2UnlockPrefs.bundle/Logo.png"];
+    UIImageView *Canvas = [[UIImageView alloc] initWithImage:image];
+    CGRect frame = CGRectMake(0, 15, 640, 129);
+    UIView *ls = [[UIView alloc] initWithFrame:frame];
+    [ls addSubview:Canvas];
+    [self.view  addSubview:ls];
+
 	if(_specifiers == nil) {
 		_specifiers = [[self loadSpecifiersFromPlistName:@"SlideUP2UnlockPrefs" target:self] retain];
 	}
 	return _specifiers;
+}
+
+ - (void)viewWillAppear:(BOOL)animated {
+    
+    self.title = nil;
+    [self reload];
 }
 
 -(void)Follow:(PSSpecifier*)spec

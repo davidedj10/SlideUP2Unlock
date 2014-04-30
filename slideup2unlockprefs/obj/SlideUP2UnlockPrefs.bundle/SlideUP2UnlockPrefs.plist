@@ -4,11 +4,23 @@
 <dict>
 	<key>items</key>
 	<array>
+	<dict>
+		<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>footerAlignment</key>
+			<integer>1</integer>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>© 2014 © Davide Fresilli.</string>
+		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Enable or Disable SlideUP2Unlock</string>
+			<string>Generals</string>
 		</dict>
 		
 		<dict>
@@ -111,12 +123,6 @@
 			<key>label</key>
 			<string>Donate!</string>
 		</dict>
-		<dict>
-	    	<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>SlideUP2Unlock 0.1 © 2014 @Davidedj10.</string>
-	</dict>	
 	</array>
 	<key>title</key>
 	<string>SlideUP2Unlock</string>

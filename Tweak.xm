@@ -16,8 +16,13 @@
 - (_Bool)_shouldAutoUnlockFromUnlockSource:(int)arg1;
 -(BOOL)attemptUnlockWithPasscode:(id)arg1;
 - (BOOL)isUILocked;
-- (void)_lockUI;
+- (void)_relockUIForButtonPress:(_Bool)arg1 afterCall:(_Bool)arg2;
 
+@end
+
+@interface SpringBoard
+- (void)_lockButtonDownFromSource:(int)arg1;
+- (void)_runUnlockTest;
 @end
 
 @interface SBDeviceLockController
@@ -40,15 +45,16 @@ bool hide_grabber = false;
 // }
 // %end
 
-%hook SpringBoard
+%hook SBLockScreenView
 
-- (void)_unscatterWillBegin:(id)arg1{
+-(id)_defaultSlideToUnlockText{
 
-	NSLog(@"ciao");
+    %orig;
+
+    return @"";    
 }
 
-%end
-
+%end 
 
 %hook SBCameraGrabberView
 
@@ -104,10 +110,8 @@ if(enabled){
 		[alertView show];
 
 		[[alertView textFieldAtIndex:0] resignFirstResponder];
-		[[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypePhonePad];
-		[[alertView textFieldAtIndex:0] becomeFirstResponder];
-
-
+		[[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+		[[alertView textFieldAtIndex:0] becomeFirstResponder]; 
 
 
 		}else{
@@ -125,21 +129,33 @@ if(enabled){
 }
 
 %new
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([textField.text length] > 3) {
+
+        textField.text = [textField.text substringToIndex:4-1];
+        
+        return NO;
+    }
+
+    return YES;
+}
+
+%new
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
  
             UITextField * alertTextField = [alertView textFieldAtIndex:0];
+
            
             if([[%c(SBLockScreenManager) sharedInstance] attemptUnlockWithPasscode:alertTextField.text]){
 
             }else{
 
-            NSLog(@"IS PASSED!");
-            [[%c(SBIconController) sharedInstance] _lockScreenUIWillLock:nil];
+            //surprising method xD
+            SpringBoard *sb = (SpringBoard *)[%c(SpringBoard) sharedApplication];
+            [sb _runUnlockTest];
 
             }
- 
-// do whatever you want to do with this UITextField.
-}
+ }
 
 
 %end
