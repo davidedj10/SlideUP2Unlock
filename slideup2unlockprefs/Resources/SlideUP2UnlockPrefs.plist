@@ -14,7 +14,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>© 2014 © Davide Fresilli.</string>
+			<string>© 2014 © Davide Fresilli (@davidedj10).</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -49,7 +49,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Respring required.</string>
+			<string>A respring is required to apply all the changes.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -79,13 +79,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Selecting this option you will hide the lock grabber on the bottom right of the lockscreen. (You will be able anyway to slide up the lockscreen from the corner).</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>PS: You can set your own icon for the unlock grabber in the lockscreen simply changing the file called "unlock@2x.png, unlock.png" in the SlideUP2Unlock Preference bundle.</string>
+			<string>Selecting this option you will hide the lock grabber on the bottom right of the lockscreen. (You will be able anyway to slide up the lockscreen from the corner).     PS: You can set your own icon for the unlock grabber in the lockscreen simply changing the file called "unlock@2x.png, unlock.png" in the SlideUP2Unlock Preference bundle.</string>
 		</dict>
 		<dict>
 			<key>cell</key>

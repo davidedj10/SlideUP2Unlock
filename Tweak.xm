@@ -33,38 +33,29 @@
 @end
 
 
+//Global Vars...
 NSDictionary *_preferences;
 
 bool enabled = false;
 bool hide_grabber = false;
 
-// %hook SBIconController
-// - (void)unscatterAnimated:(_Bool)arg1 afterDelay:(double)arg2 withCompletion:(id)arg3{
-
-// 	%orig(false, arg2, arg3);
-// }
-// %end
-
-%hook SBLockScreenView
-
--(id)_defaultSlideToUnlockText{
-
-    %orig;
-
-    return @"";    
-}
-
-%end 
 
 %hook SBCameraGrabberView
 
 - (id)_cameraGrabberImage{
-
+if(enabled){
 	if(hide_grabber){
+
 		return nil;
+
 	}else{
+
 		return [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/SlideUP2UnlockPrefs.bundle/unlock.png"]; 
 	}
+}else{
+
+	return %orig;
+}
 
 }
 
@@ -80,7 +71,7 @@ if(enabled){
 
  	NSLog(@"Hooking the container camera view!");
 
- 	//Yay quite tricky but it works! :D
+ 		//Yay quite tricky but it works! :D
  		if(sliderCount < 1){
 
 		UIView *DownView = MSHookIvar<UIView *>(self, "_cameraContainerView");
@@ -126,18 +117,6 @@ if(enabled){
 
 	}
 
-}
-
-%new
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if ([textField.text length] > 3) {
-
-        textField.text = [textField.text substringToIndex:4-1];
-        
-        return NO;
-    }
-
-    return YES;
 }
 
 %new
